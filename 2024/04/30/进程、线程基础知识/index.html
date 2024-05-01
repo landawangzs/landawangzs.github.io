@@ -219,14 +219,14 @@
     const config = Object.assign({
       src: 'https://giscus.app/client.js',
       'data-repo': 'landawangzs/discussion',
-      'data-repo-id': '',
+      'data-repo-id': 'R_kgDOL1k6TA',
       'data-category-id': '',
       'data-mapping': 'pathname',
       'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
       'data-reactions-enabled': '1',
       crossorigin: 'anonymous',
       async: true
-    },null)
+    },{"reactions_enabled":true,"emit_metadata":true,"preview":true,"markdown":true})
 
     const ele = document.createElement('script')
     for (let key in config) {
