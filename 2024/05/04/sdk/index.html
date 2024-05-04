@@ -1,0 +1,404 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>sdk | LdwZsのBlog</title><meta name="author" content="LdwZs"><meta name="copyright" content="LdwZs"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="什么是SDK？software development kit 软件开发包 什么场景下需要 SDK ?   平台扩展性: 如果你希望你的应用程序或平台能够被其他开发者扩展或定制，提供一个SDK可以让开发者更容易地与你的平台进行集成。 降低开发门槛: 通过提供SDK，你可以帮助其他开发者更快速地开始使用你的服务或产品，从而提高了用户的采用率。 版本控制: 当你的产品或服务有更新时，你可以通过更新SD">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sdk">
+<meta property="og:url" content="http://example.com/2024/05/04/sdk/index.html">
+<meta property="og:site_name" content="LdwZsのBlog">
+<meta property="og:description" content="什么是SDK？software development kit 软件开发包 什么场景下需要 SDK ?   平台扩展性: 如果你希望你的应用程序或平台能够被其他开发者扩展或定制，提供一个SDK可以让开发者更容易地与你的平台进行集成。 降低开发门槛: 通过提供SDK，你可以帮助其他开发者更快速地开始使用你的服务或产品，从而提高了用户的采用率。 版本控制: 当你的产品或服务有更新时，你可以通过更新SD">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/image/lyy.jpg">
+<meta property="article:published_time" content="2024-05-04T07:14:54.000Z">
+<meta property="article:modified_time" content="2024-05-04T07:42:55.637Z">
+<meta property="article:author" content="LdwZs">
+<meta property="article:tag" content="SDK">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image/lyy.jpg"><link rel="shortcut icon" href="/image/cf.png"><link rel="canonical" href="http://example.com/2024/05/04/sdk/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: LdwZs","link":"链接: ","source":"来源: LdwZsのBlog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'sdk',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-05-04 15:42:55'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/image/lyy.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/chat/"><i class="fa-fw fas fa-link"></i><span> 闲谈</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 日常</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 观影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/image/top/lyybz.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="LdwZsのBlog"><span class="site-name">LdwZsのBlog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/chat/"><i class="fa-fw fas fa-link"></i><span> 闲谈</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 日常</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 观影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">sdk</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-04T07:14:54.000Z" title="发表于 2024-05-04 15:14:54">2024-05-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-04T07:42:55.637Z" title="更新于 2024-05-04 15:42:55">2024-05-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/">项目笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="sdk"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="什么是SDK？"><a href="#什么是SDK？" class="headerlink" title="什么是SDK？"></a>什么是SDK？</h1><p>software development kit 软件开发包</p>
+<h1 id="什么场景下需要-SDK"><a href="#什么场景下需要-SDK" class="headerlink" title="什么场景下需要 SDK ?"></a>什么场景下需要 SDK ?</h1><table><tr><td bgcolor=#FFFFCD>
+
+<ol>
+<li>平台扩展性: 如果你希望你的应用程序或平台能够被其他开发者扩展或定制，提供一个SDK可以让开发者更容易地与你的平台进行集成。</li>
+<li>降低开发门槛: 通过提供SDK，你可以帮助其他开发者更快速地开始使用你的服务或产品，从而提高了用户的采用率。</li>
+<li>版本控制: 当你的产品或服务有更新时，你可以通过更新SDK来确保集成方能够平滑过渡，而不会因为API的变动导致应用崩溃。</li>
+<li>快速原型开发: 使用SDK可以让开发者们快速构建原型，从而在短时间内验证概念和想法。</li>
+<li>跨平台支持: 通过提供多个SDK版本，可以让开发者在不同平台上使用你的服务，比如移动端、桌面端或者Web端。</li>
+<li>提高安全性: 通过提供SDK，你可以控制与你的服务进行通信的方式和权限，从而保证数据的安全性。</li>
+<li>支持开发生态系统: 提供SDK可以帮助你建立一个强大的开发者生态系统，吸引更多的开发者和合作伙伴。<br>比如,我就一个地方需要使用,我需要单独拿出来封装成 sdk 吗? 当然也不一定. 如果当然拥有 sdk 能让大家忽略具体实现能更快的进入到开发,更新的时候只需要换一下引入的模板就好了</li>
+</ol>
+</td></tr></table>
+
+<h1 id="SDK-和-starter-的区别与联系"><a href="#SDK-和-starter-的区别与联系" class="headerlink" title="SDK 和 starter 的区别与联系"></a>SDK 和 starter 的区别与联系</h1><table><tr><td bgcolor=#FFFFCD>
+
+<h2 id="SDK（Software-Development-Kit）"><a href="#SDK（Software-Development-Kit）" class="headerlink" title="SDK（Software Development Kit）"></a>SDK（Software Development Kit）</h2><ul>
+<li><p>定义：SDK是一组开发工具、库、文档等的集合，旨在帮助开发者更容易地构建应用程序、组件或服务。SDK通常包括了一系列的API（Application Programming Interface）和工具，使得开发者能够与特定平台、系统或服务进行交互。</p>
+</li>
+<li><p>用途：</p>
+<ul>
+<li><p>提供了对特定平台、系统或服务的访问和控制。</p>
+</li>
+<li><p>简化了开发者与目标平台之间的交互过程。</p>
+</li>
+<li><p>提供了示例代码、文档等，以便开发者更容易上手。</p>
+</li>
+</ul>
+</li>
+<li><p>示例：Android SDK用于开发Android应用程序，AWS SDK用于与Amazon Web Services进行交互。</p>
+</li>
+</ul>
+<h2 id="Starter"><a href="#Starter" class="headerlink" title="Starter"></a>Starter</h2><ul>
+<li><p>定义：Starter是Spring Boot框架的一部分，它是一种特殊类型的依赖库（Dependency）或模块，用于快速配置和引导特定功能或服务。Starter包含了所需的库、配置和其他依赖，可以帮助开发者轻松地集成特定功能到Spring Boot应用中。</p>
+</li>
+<li><p>用途：</p>
+<ul>
+<li><p>简化了特定功能的集成和配置过程。</p>
+</li>
+<li><p>提供了默认配置，使得开发者可以快速启动项目。</p>
+</li>
+<li><p>减少了对第三方库的繁琐配置。</p>
+</li>
+</ul>
+</li>
+<li><p>示例：Spring Boot提供了许多starter，比如spring-boot-starter-web用于快速搭建Web应用，spring-boot-starter-data-jpa用于集成持久化。</p>
+</li>
+</ul>
+<h2 id="区别与联系"><a href="#区别与联系" class="headerlink" title="区别与联系"></a>区别与联系</h2><ul>
+<li><p>角色不同：</p>
+<ul>
+<li><p>SDK是一组工具和API，用于开发者构建应用程序，与特定的平台、系统或服务交互。</p>
+</li>
+<li><p>Starter是Spring Boot框架提供的一种依赖库，用于快速配置和引导特定功能或服务。</p>
+</li>
+</ul>
+</li>
+<li><p>应用场景：</p>
+<ul>
+<li><p>使用SDK可以与特定的平台或服务进行交互，如操作系统、云服务等。</p>
+</li>
+<li><p>使用Starter可以快速集成特定功能，比如Web开发、数据持久化等。</p>
+</li>
+</ul>
+</li>
+<li><p>联系：</p>
+<ul>
+<li>在实际开发中，可以同时使用SDK和Starter来加速开发过程。比如，使用特定SDK与外部服务通信，同时使用Spring Boot Starter来快速构建应用程序。</li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+
+<h1 id="开发中常见的-SDK"><a href="#开发中常见的-SDK" class="headerlink" title="开发中常见的 SDK"></a>开发中常见的 SDK</h1><table><tr><td bgcolor=#FFFFCD>
+
+<ul>
+<li><p>调用第三方 API：在开发过程中，经常会需要与第三方服务进行交互，比如支付接口、社交平台API等。使用相应的SDK可以简化与这些服务进行通信的过程。</p>
+</li>
+<li><p>内部不同系统 HTTP Client 频繁调用封装：在一个大型系统中，可能会涉及到多个内部子系统的通信。为了简化这些子系统之间的HTTP请求，可以封装一个SDK，提供一些常用的HTTP请求方法，让开发者可以更方便地进行调用。</p>
+</li>
+<li><p>中台系统：中台系统通常是一个统一的服务层，为前后端提供接口和服务，也可能会提供一些SDK给前端或其他子系统使用，以便更方便地调用中台的功能。</p>
+</li>
+</ul>
+</td></tr></table>
+
+<p>工具包算是 sdk 吗 ?</p>
+<table><tr><td bgcolor=#FFFFCD>
+
+<p>工具包通常包含一系列的库、模块或工具集，用于解决特定领域或问题，以便开发人员能够更快速、高效地完成特定任务。这些工具包可以涵盖各种功能，例如数据处理、网络通信、安全加密、图形处理等。</p>
+<p>因此，从某种意义上说，工具包可以被视为是一种特定领域的SDK，其目的是为了帮助开发人员在特定领域内开发应用程序。</p>
+</td></tr></table>
+
+<h1 id="SDK开发实战–API客户端SDK开发"><a href="#SDK开发实战–API客户端SDK开发" class="headerlink" title="SDK开发实战–API客户端SDK开发"></a>SDK开发实战–API客户端SDK开发</h1><p>初始化，环境依赖（一定要移除build）</p>
+<p>spring-boot-configuration-processor 的作用是自动生成配置的代码提示</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>cn.hutool<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hutool-all<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.8.16<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-configuration-processor<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>编写配置类（启动类）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="comment">//@Configuration将该类标记为一个配置类，告诉Sping这是一个用于配置的类</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="comment">//@ComponentScan注解用于自动扫描组件，使得水平能够自动注册相应的Bean</span></span><br><span class="line"><span class="meta">@ComponentScan</span></span><br><span class="line"><span class="comment">//@ConfigurationProperties读取yml中的配置， 设置到我们的属性中，并加上zsapi.client前缀</span></span><br><span class="line"><span class="meta">@ConfigurationProperties(&quot;zsapi.client&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ZsApiClientConfig</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String accessKey;</span><br><span class="line">    <span class="keyword">private</span> String secretKey;</span><br><span class="line">    <span class="comment">//创建一个名为“zsApiClient”的Bean</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> ZsApiClient <span class="title function_">zsApiClient</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ZsApiClient</span>(accessKey, secretKey);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>开发com&#x2F;zs&#x2F;zsclientsdk&#x2F;client&#x2F;ZsApiClient.java 调用客户端</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 负责调用第三方接口</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ZsApiClient</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">GATEWAY_HPST</span> <span class="operator">=</span> <span class="string">&quot;http://localhost:8090&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> String  accessKey;</span><br><span class="line">    <span class="keyword">private</span> String  secretKey;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">ZsApiClient</span><span class="params">(String accessKey, String secretKey)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.accessKey = accessKey;</span><br><span class="line">        <span class="built_in">this</span>.secretKey = secretKey;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//使用get方法从服务器获取名称</span></span><br><span class="line">        <span class="keyword">public</span> String <span class="title function_">getNameByGet</span><span class="params">(String name)</span>&#123;</span><br><span class="line">            <span class="comment">//可以单独传入http参数，这样参数会自动做URL编码，拼接在URL中</span></span><br><span class="line">            HashMap&lt;String, Object&gt; paramMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">            <span class="comment">//将‘name’参数添加到映射中</span></span><br><span class="line">            paramMap.put(<span class="string">&quot;name&quot;</span>, name);</span><br><span class="line">            <span class="comment">//使用httputil工具发起GET请求， 并且获取服务器返回的结果</span></span><br><span class="line">            String result= HttpUtil.get(GATEWAY_HPST + <span class="string">&quot;/api/name/get&quot;</span>, paramMap);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="comment">//使用post方法从服务器获取名称</span></span><br><span class="line">        <span class="keyword">public</span> String <span class="title function_">getNameByPost</span><span class="params">( String name)</span>&#123;</span><br><span class="line">            HashMap&lt;String, Object&gt; paramMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">            paramMap.put(<span class="string">&quot;name&quot;</span>, name);</span><br><span class="line"></span><br><span class="line">            String result= HttpUtil.post(GATEWAY_HPST + <span class="string">&quot;/api/name/post&quot;</span>, paramMap);</span><br><span class="line">            System.out.println(result);</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Map&lt;String, String&gt; <span class="title function_">getHeaderMap</span><span class="params">(String body)</span>&#123;</span><br><span class="line">        <span class="comment">//创建一个新的HashMap对象</span></span><br><span class="line">        HashMap&lt;String, String&gt; hashMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">//将ak, sk和其对应的值放入到map当中。</span></span><br><span class="line">        hashMap.put(<span class="string">&quot;accessKey&quot;</span>, accessKey);</span><br><span class="line">        <span class="comment">//不能直接发送密钥。</span></span><br><span class="line">       <span class="comment">// hashMap.put(&quot;secretKey&quot;, secretKey);</span></span><br><span class="line">        <span class="comment">//生成随机数</span></span><br><span class="line">        hashMap.put(<span class="string">&quot;nonce&quot;</span>, RandomUtil.randomNumbers(<span class="number">4</span>));</span><br><span class="line">        <span class="comment">//请求体内容</span></span><br><span class="line">        hashMap.put(<span class="string">&quot;body&quot;</span>, body);</span><br><span class="line">        <span class="comment">//String.valueOf将数值转换为字符串</span></span><br><span class="line">        <span class="comment">//String.currentTimeMillis反悔呢当前的时间的毫秒数/1000转成秒</span></span><br><span class="line">        hashMap.put(<span class="string">&quot;timestamp&quot;</span>, String.valueOf(System.currentTimeMillis()/<span class="number">1000</span>));</span><br><span class="line">        hashMap.put(<span class="string">&quot;sign&quot;</span>, genSign(body, secretKey));</span><br><span class="line">        <span class="comment">//返回请求头的map</span></span><br><span class="line">        <span class="keyword">return</span> hashMap;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//使用post方法向服务器发送User对象，并且获取服务器返回的结果</span></span><br><span class="line">        <span class="keyword">public</span> String <span class="title function_">getUserNameByPost</span><span class="params">( User user)</span>&#123;</span><br><span class="line">            <span class="comment">//将user对象转成字符串</span></span><br><span class="line">            <span class="type">String</span> <span class="variable">json</span> <span class="operator">=</span> JSONUtil.toJsonStr(user);</span><br><span class="line">            <span class="type">HttpResponse</span> <span class="variable">httpResponse</span> <span class="operator">=</span> HttpRequest.post(GATEWAY_HPST + <span class="string">&quot;/api/name/userpost&quot;</span>)</span><br><span class="line">                    <span class="comment">//添加前面构造的请求头</span></span><br><span class="line">                    .addHeaders(getHeaderMap(json))</span><br><span class="line">                    .body(json)<span class="comment">//将JSON字符串设置为请求体</span></span><br><span class="line">                    .execute();<span class="comment">//执行请求</span></span><br><span class="line">            System.out.println(httpResponse.getStatus());</span><br><span class="line">            <span class="type">String</span> <span class="variable">result</span> <span class="operator">=</span> httpResponse.body();</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>签名工具</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 签名工具</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SignUtils</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">genSign</span><span class="params">(String body, String secretKey)</span>&#123;</span><br><span class="line">       <span class="comment">//使用SHA256算法生成的Digester</span></span><br><span class="line">        <span class="type">Digester</span> <span class="variable">md5</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Digester</span>(DigestAlgorithm.SHA256);</span><br><span class="line">        <span class="comment">//构建签名内容， 将哈希表映射转成为字符串并且拼接密钥</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">content</span> <span class="operator">=</span> body + <span class="string">&quot;.&quot;</span> + secretKey;</span><br><span class="line">        <span class="comment">//计算签名的摘要并返回摘要的16进制表示格式</span></span><br><span class="line">        <span class="keyword">return</span> md5.digestHex(content);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实体类 User</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">private</span>   String username;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p>注册配置类–  META-INF&#x2F;spring.factories文件：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#spring.factories</span><br><span class="line">org.springframework.boot.autoconfigure.EnableAutoConfiguration =com.zs.zsclientsdk.ZsApiClientConfig</span><br></pre></td></tr></table></figure>
+
+<p>maven install 打包代码为本地依赖包–在本地的maven仓库中存储</p>
+<p>在别的项目中引入SDK即可</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">LdwZs</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/05/04/sdk/">http://example.com/2024/05/04/sdk/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">LdwZsのBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/SDK/">SDK</a></div><div class="post_share"><div class="social-share" data-image="/image/lyy.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/image/wx1.jpg" target="_blank"><img class="post-qr-code-img" src="/image/wx1.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2024/05/04/API-qmrz/" title="API签名认证的实现"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">API签名认证的实现</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/image/lyy.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">LdwZs</div><div class="author-info__description">一些学习笔记的分享</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://t.zsxq.com/3SxFz"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">进程、线程基础知识第一篇已经更新完，欢迎友友们自取</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFSDK%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">什么是SDK？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E5%9C%BA%E6%99%AF%E4%B8%8B%E9%9C%80%E8%A6%81-SDK"><span class="toc-number">2.</span> <span class="toc-text">什么场景下需要 SDK ?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SDK-%E5%92%8C-starter-%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%8E%E8%81%94%E7%B3%BB"><span class="toc-number">3.</span> <span class="toc-text">SDK 和 starter 的区别与联系</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SDK%EF%BC%88Software-Development-Kit%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">SDK（Software Development Kit）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Starter"><span class="toc-number">3.2.</span> <span class="toc-text">Starter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB%E4%B8%8E%E8%81%94%E7%B3%BB"><span class="toc-number">3.3.</span> <span class="toc-text">区别与联系</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84-SDK"><span class="toc-number">4.</span> <span class="toc-text">开发中常见的 SDK</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SDK%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98%E2%80%93API%E5%AE%A2%E6%88%B7%E7%AB%AFSDK%E5%BC%80%E5%8F%91"><span class="toc-number">5.</span> <span class="toc-text">SDK开发实战–API客户端SDK开发</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/04/sdk/" title="sdk">sdk</a><time datetime="2024-05-04T07:14:54.000Z" title="发表于 2024-05-04 15:14:54">2024-05-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/04/API-qmrz/" title="API签名认证的实现">API签名认证的实现</a><time datetime="2024-05-04T05:48:56.000Z" title="发表于 2024-05-04 13:48:56">2024-05-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/03/czxtxxlx/" title="操作系统学习路线">操作系统学习路线</a><time datetime="2024-05-03T13:22:32.000Z" title="发表于 2024-05-03 21:22:32">2024-05-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/02/zhan/" title="栈">栈</a><time datetime="2024-05-02T15:11:08.000Z" title="发表于 2024-05-02 23:11:08">2024-05-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/30/jinchengxianchengjichu/" title="进程、线程基础知识">进程、线程基础知识</a><time datetime="2024-04-30T14:44:02.000Z" title="发表于 2024-04-30 22:44:02">2024-04-30</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By LdwZs</div><!--if theme.footer.copyright--><!--  .framework-info--><!--    span= _p('footer.framework') + ' '--><!--    a(href='https://hexo.io')= 'Hexo'--><!--    span.footer-separator |--><!--    span= _p('footer.theme') + ' '--><!--    a(href='https://github.com/jerryc127/hexo-theme-butterfly')= 'Butterfly'--></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><div class="js-pjax"><script>(()=>{
+  const getGiscusTheme = theme => {
+    return theme === 'dark' ? 'dark' : 'light'
+  }
+
+  const loadGiscus = () => {
+    const config = Object.assign({
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'landawangzs/landawangzs.github.io',
+      'data-repo-id': 'R_kgDOL00fVg',
+      'data-category-id': '',
+      'data-mapping': 'pathname',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true
+    },{"reactions_enabled":true,"emit_metadata":true,"preview":true,"markdown":true})
+
+    const ele = document.createElement('script')
+    for (let key in config) {
+      ele.setAttribute(key, config[key])
+    }
+    document.getElementById('giscus-wrap').appendChild(ele)
+  }
+
+  const changeGiscusTheme = theme => {
+    const sendMessage = message => {
+      const iframe = document.querySelector('iframe.giscus-frame')
+      if (!iframe) return
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app')
+    }
+
+    sendMessage({
+      setConfig: {
+        theme: getGiscusTheme(theme)
+      }
+    });
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if ('Giscus' === 'Giscus' || !true) {
+    if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment= loadGiscus
+  }
+})()</script></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-heart.min.js" async="async" mobile="false"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["link[rel=\"canonical\"]","meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/no-pjax/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
